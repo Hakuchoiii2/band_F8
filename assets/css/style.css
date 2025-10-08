@@ -13,8 +13,49 @@ html {
 /* 1. từ ngoài vào trong
 2. từ trên xuống dưới
 3. Tổng quan đến chi tiết */
+/* Common */
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
 
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-16 {
+    margin-top: 16px !important;
+}
+
+.col::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    padding-left: 8px;
+    padding-right: 8px;
+    float: left;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-third {
+    width: 33.33333%;
+}
 
 .clear {
     clear: both;
@@ -24,10 +65,11 @@ html {
     color: #fff !important;
 }
 
-#main {
-
+.text-center {
+    text-align: center !important;
 }
 
+/* #main */
 #header {
     height: 46px;
     background-color: rgb(0, 0, 0);
@@ -186,7 +228,6 @@ html {
 
 #content .member-list{
     margin-top: 48px;
-    text-align: center;
 }
 
 #content .member-name {
@@ -202,8 +243,7 @@ html {
 }
 
 #content .member-item{
-    float: left;
-    width: 33.3333333%;
+    text-align: center;
 
 }
 /* Tour section */
@@ -244,12 +284,11 @@ html {
 }
 /* places */
 .place-list {
-    margin: 32px -8px 48px;
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
 .place-item {
     width: 33.3333333%;
-    float: left;
-    padding: 0px 8px;
 }
 .place-img {
     display: block;
@@ -293,10 +332,48 @@ html {
     color:#000;
 }
 
+/* Contact form */
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.contact-info i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+
+}
+
+.contact-form .form-control {
+    padding: 11px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.contact-form .form-submit {
+    font-size: 15px;
+    background-color: #000;
+    color:#fff;
+    border: 1px solid #000;
+    padding: 10px 16px;
+    float: right;
+}
+
 #footer {
 
 }
 
+/* Modal */
 .modal {
     align-items: center;
     justify-content: center;
@@ -355,6 +432,7 @@ html {
     padding: 10px;
     font-size: 15px;
     margin-bottom: 20px;
+    border-radius: 4px;
 }
 
 .modal .modal-close:hover {
@@ -420,3 +498,21 @@ html {
         transform: translateY(-140px)
     }
 }
+
+.transition-click {
+    outline: 1px solid transparent;   /* cần có để transition được */            /* đẩy ra xa để “ẩn” */
+    transition:
+        outline-color .25s ease,
+        outline-width .25s ease,
+        outline-offset .25s ease;
+}
+
+.transition-click:focus,
+.transition-click:focus-visible{
+  outline-color: #1b93e2;            /* xanh dương */
+  outline-width: 1px;                 /* dày hơn một chút */
+}
+
+ /* @media (prefers-reduced-motion: reduce){
+  .transition-click{ transition: none; }
+}  */
