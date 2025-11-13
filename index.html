@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Band</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="icon" href="https://fullstack.edu.vn/favicon/favicon_16x16.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/icon/themify-icons-font/themify-icons/themify-icons.css">
 </head>
@@ -17,7 +18,7 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href=""> 
+                    <a href="#"> 
                         More
                         <i class="nav-arrow- down ti-angle-down"></i>
                     </a>
@@ -34,6 +35,10 @@
              <div class="search-button">
                 <i class="search-icon ti-search"></i>
              </div>
+
+             <div id="mobile-menu" class="menu-icon moblie-meunu-btn">
+                <i class="ti-menu"></i>
+            </div>
             <!-- End: Search button -->
         </div>
 
@@ -237,6 +242,28 @@
         modalContainer.addEventListener('click', function(event) {
             event.stopPropagation()
         })
+
+        var header = document.getElementById('header');
+        var MobileMenu = document.getElementById('mobile-menu')
+        var headerHeight = header.clientHeight;
+        //Đóng mở mobile menu
+        MobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if(isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        // Tự động đóng mobile menu khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for(var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            menuItem.onclick = function() {
+                header.style.height = null;
+            } 
+        }
     </script>
 </body>
 </html>
