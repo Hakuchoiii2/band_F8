@@ -12,6 +12,16 @@
         display: inline-block;
     }
 
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color:#fff;
+        padding: 5px 16px
+    }
+
     #header{
         overflow: hidden;
     }
