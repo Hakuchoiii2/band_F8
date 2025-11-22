@@ -34,6 +34,10 @@ html {
     margin-top: 16px !important;
 }
 
+.mt-32 {
+    margin-top: 32px !important;
+}
+
 .col::after {
     content: "";
     display: block;
@@ -79,6 +83,7 @@ html {
     margin-top: 15px;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn:hover{
